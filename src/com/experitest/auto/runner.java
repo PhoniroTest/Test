@@ -1,23 +1,13 @@
-package test2;
+package com.experitest.auto;
 import com.experitest.client.*;
 import org.junit.*;
-public class runner {
+public class runner extends BaseTest{
 
-  private String host = "localhost";
-  private int port = 8889;
-  private String projectBaseDirectory = "C:\\Users\\taif.hussain\\workspace\\project4";
-  protected Client client = null;
-  protected GridClient grid = null;
-
-  @Before
-  public void setUp(){
-      // In case your user is assign to a single project you can provide an empty string, 
-      // otherwise please specify the project name
-	  grid= new GridClient("admin", "Maxyman23", "Default", "192.168.60.143", 80, false);
-	  client = grid.lockDeviceForExecution("testy", "@name='XCover 4-01'", 2850, 50000);
-      client.setProjectBaseDirectory(projectBaseDirectory);
-      client.setReporter("xml", "reports", "Untitled");
-  }
+	@Before
+	public void setUp() throws Exception{
+		init("@name='XCover 4-01'", "Testy");
+	}
+  
 
   @Test
   public void testUntitled(){
