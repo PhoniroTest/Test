@@ -1,9 +1,9 @@
 package com.experitest.auto;
 import com.experitest.client.*;
-import org.junit.*;
+import org.testng.annotations.*;
 public class runner extends BaseTest{
 
-	@Before
+	@BeforeMethod
 	public void setUp() throws Exception{
 		init("@name='XCover 4-01'", "Testy");
 	}
@@ -24,7 +24,7 @@ public class runner extends BaseTest{
       client.click("default", "Logga ut_11", 0, 1);
   }
 
-  @After
+  @AfterMethod
   public void tearDown(){
       // Generates a report of the test case.
       // For more information - https://docs.experitest.com/display/public/SA/Report+Of+Executed+Test
