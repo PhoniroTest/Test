@@ -57,7 +57,6 @@ public class BaseTest {
 		fr.close();
 	}
 
-	@After
 	@AfterMethod
 	public void tearDown() {
 		// Generates a report of the test case.
